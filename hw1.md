@@ -362,6 +362,156 @@ Kubernetes добавляет экземпляр в реестр после ус
 ## Иллюстрация:  
 ![Database ER diagram (crow's foot) (9)](https://github.com/user-attachments/assets/d232bb77-1b8f-4010-abd4-b706e0475e71)
 
+## Описание таблиц, размеры и консистентность:
+
+### Table: `video`
+| Атрибут        | Тип данных  | Размер, байт |
+|----------------|-------------|--------------|
+| video_id       | string      | 16           |
+| channel_id     | string      | 16           |
+| title          | string      | до 100       |
+| description    | string      | до 5000  |
+| duration       | int         | 4            |
+| formats        | JSON        | до 100  |
+| created_at     | datetime    | 8            |
+| views_count    | int         | 4            |
+| likes_count    | int         | 4            |
+| dislikes_count | int         | 4            |
+| comment_count  | int         | 4            |
+| status         | string      | 16  |
+| 18_flag        | bool        | 1            |
+| service_tags   | JSON        | до 256  |
+| metadata       | JSON        | до 256  |
+_При удалении видео удаляются и все комментарии_
+
+
+### Table: `article_comments`
+| Атрибут     | Тип данных  | Размер, байт |
+|-------------|-------------|--------------|
+| comment_id  | string      | 16           |
+| writer_id   | string      | 16           |
+| article_id  | string      | 16           |
+| answered_to | string      | 16  |
+| like_count  | int         | 4            |
+| status      | string      | 16  |
+
+
+
+### Table: `video_comments`
+| Атрибут     | Тип данных  | Размер, байт |
+|-------------|-------------|--------------|
+| comment_id  | string      | 16           |
+| writer_id   | string      | 16           |
+| video_id  | string      | 16           |
+| answered_to | string      | 16  |
+| like_count  | int         | 4            |
+| status      | string      | 16  |
+
+
+### Table: `templates`
+| Атрибут     | Тип данных  | Размер, байт |
+|-------------|-------------|--------------|
+| template_id | string      | 16           |
+| name        | string      | 32  |
+| path        | string      | 64  |
+
+
+### Table: `article`
+| Атрибут     | Тип данных  | Размер, байт |
+|-------------|-------------|--------------|
+| article_id  | string      | 16           |
+| channel_id  | string      | 16           |
+| writer_id   | string      | 16           |
+| title       | string      | до 128       |
+| text        | string      | до 1500 |
+| tags        | JSON        | до 100  |
+| published_at| datetime    | 8            |
+| views_count | int         | 4            |
+| likes_count | int         | 4            |
+| images      | JSON        | до 600  |
+| 18_flag     | bool        | 1            |
+| service_tags| JSON        | до 256  |
+| metadata    | JSON        | до 256  |
+_При удалении статьи удаляются и все комментарии_
+
+### Table: `channel`
+| Атрибут            | Тип данных  | Размер, байт |
+|--------------------|-------------|--------------|
+| channel_id         | string      | 16           |
+| subscribers_number | int         | 4            |
+| title              | string      | до 140  |
+| description        | string      | до 200  |
+| site_href          | string      | до 64  |
+| email              | string      | до 300  |
+| blocked_flag       | bool        | 1            |
+| 18_flag            | bool        | 1            |
+| created_at         | datetime    | 8            |
+
+
+### Table: `user`
+| Атрибут          | Тип данных  | Размер, байт |
+|------------------|-------------|--------------|
+| user_id          | string      | 16           |
+| name             | string      | до 64  |
+| surname          | string      | до 64  |
+| gender           | string      | 1            |
+| born_at          | datetime    | 8            |
+| registered_at    | datetime    | 8            |
+| nickname         | string      | 32  |
+| password_hash    | string      | 64  |
+| avatar_path      | string      | 64  |
+| email            | string      | до 300  |
+| phone_number     | string      | до 12  |
+| favorite_articles| JSON        | до 8128  |
+| favorite_videos  | JSON        | до 8128  |
+| views_history    | JSON        | до 16256  |
+| channels         | JSON        | до 8128  |
+| blocked_flag     | bool        | 1            |
+_При удалении пользователя удаляются все связанные с ним записи во всех таблицах_
+
+
+### Table: `user_payment`
+| Атрибут        | Тип данных  | Размер, байт |
+|----------------|-------------|--------------|
+| card_number_hash| string      | 16           |
+| user_id        | string      | 16           |
+| holder_name    | string      | 20  |
+| valid_until    | datetime    | 8            |
+
+
+### Table: `user_device`
+| Атрибут      | Тип данных  | Размер, байт |
+|--------------|-------------|--------------|
+| device_id    | string      | 16           |
+| user_id      | string      | 16           |
+| device_name  | string      | 32  |
+| last_seen_at | datetime    | 8            |
+| IP_address   | string      | 16  |
+| geo_city     | string      | 32  |
+
+
+### Table: `session`
+| Атрибут    | Тип данных  | Размер, байт |
+|------------|-------------|--------------|
+| session_id | string      | 16           |
+| user_id    | string      | 16           |
+
+
+### Table: `search_logs`
+| Атрибут  | Тип данных  | Размер, байт |
+|----------|-------------|--------------|
+| user_id  | string      | 16           |
+| query    | string      | 32  |
+| date     | datetime    | 8            |
+
+
+### Table: `statistic`
+| Атрибут   | Тип данных  | Размер, байт |
+|-----------|-------------|--------------|
+| statistic_id | string      | 16        |
+| user_id      | string      | 16        |
+| article_views        | JSON        | до 200 |
+| video_views        | JSON        | до 200 |
 
 ---
 
