@@ -360,7 +360,8 @@ Kubernetes добавляет экземпляр в реестр после ус
 ## 5. Логическая схема базы данных
 ---
 ## Иллюстрация:  
-![Database ER diagram (crow's foot) (9)](https://github.com/user-attachments/assets/d232bb77-1b8f-4010-abd4-b706e0475e71)
+![Database ER diagram (crow's foot) (10)](https://github.com/user-attachments/assets/38efc3a0-ce96-4068-8b9b-c9282a66b7f5)
+
 
 ## Описание таблиц, размеры и консистентность:
 
