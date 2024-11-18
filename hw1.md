@@ -585,7 +585,7 @@ Kubernetes добавляет экземпляр в реестр после ус
 ## 6. Физическая схема базы данных  
 ---
 ## Физическая схема базы данных:  
-![Blank board - Page 1](https://github.com/user-attachments/assets/2ab16fc6-3aef-4b86-8752-857efde5c76d)
+![Blank board - Page 1](database_color_scheme.jpeg)
 
 
 ## Таблица с описание таблиц:    
