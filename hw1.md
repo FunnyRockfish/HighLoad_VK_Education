@@ -1009,17 +1009,16 @@ _Как работает_
 
 
 
-| Название БД         | Сервис                    | Пиковая нагрузка              | CPU | RAM    | Кол-во |
+| Название БД         | Сервис                    | Пиковая нагрузка              | CPU | RAM    | Кол-во контейнеров|
 |---------------------|---------------------------|-------------------------------|-----|--------|-----|
-| Kafka               | event-sourcing, CQRS, Statistic  | 200000 RPS                 | 16  | 64 GB  | 50  |
-| Redis               | auth                      | 150000 RPS                 | 8   | 64 GB  | 50  |
-| MongoDB             | article, video, file (outbox), contentControl, favorite, recommend                   | 60000                     | 8   | 32 GB  | 35  |
-| Elasticsearch       | search                   | 250 | 8   | 32 GB  | 10  |
-| S3                | file                     | 25 000 RPS                   | 16  | 64 GB  | 30  |
-| Prometheus     | метрики                   | 300 RPS                       | 4   | 16 GB  | 20  |
-| ClickHouse          | comment, recommend, search, favorite                  | 25000 RPS           | 8   | 32 GB  | 20  |
-| Vault                | Auth                   | 10000 RPS          | 4   | 16 GB  | 30  |
-| PostgreSQL                | Profile, Channel, ContentControl                   | 20000 RPS          | 4   | 16 GB  | 40  |
+| Kafka               | event-sourcing, CQRS, Statistic  | 200000 RPS                 | 16  | 64 GB  | 20  |
+| Redis               | auth                      | 150000 RPS                 | 8   | 64 GB  | 8  |
+| MongoDB             | article, video, file (outbox), contentControl, favorite, recommend                   | 60000                     | 8   | 32 GB  | 12  |
+| Elasticsearch       | search                   | 250 | 8   | 32 GB  | 3  |
+| Prometheus     | метрики                   | 300 RPS                       | 4   | 16 GB  | 6  |
+| ClickHouse          | comment, recommend, search, favorite                  | 25000 RPS           | 8   | 32 GB  | 5  |
+| Vault                | Auth                   | 10000 RPS          | 4   | 16 GB  | 4 |
+| PostgreSQL                | Profile, Channel, ContentControl                   | 20000 RPS          | 4   | 16 GB  | 15  |
 
 ---
 
