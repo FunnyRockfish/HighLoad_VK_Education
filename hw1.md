@@ -1008,16 +1008,17 @@ _Как работает_
 
 
 
-| Название БД         | Сервис                    | Пиковая нагрузка              | CPU | RAM    | Кол-во контейнеров|
-|---------------------|---------------------------|-------------------------------|-----|--------|-----|
-| Kafka               | event-sourcing, CQRS, Statistic  | 200000 RPS                 | 16  | 64 GB  | 20  |
-| Redis               | auth                      | 150000 RPS                 | 8   | 64 GB  | 8  |
-| MongoDB             | article, video, file (outbox), contentControl, favorite, recommend                   | 60000                     | 8   | 32 GB  | 12  |
-| Elasticsearch       | search                   | 250 | 8   | 32 GB  | 3  |
-| Prometheus     | метрики                   | 300 RPS                       | 4   | 16 GB  | 6  |
-| ClickHouse          | comment, recommend, search, favorite                  | 25000 RPS           | 8   | 32 GB  | 5  |
-| Vault                | Auth                   | 10000 RPS          | 4   | 16 GB  | 4 |
-| PostgreSQL                | Profile, Channel, ContentControl                   | 20000 RPS          | 4   | 16 GB  | 15  |
+| Название БД         | Сервис                    | Пиковая нагрузка              | CPU | RAM    | Кол-во контейнеров |
+|---------------------|---------------------------|-------------------------------|-----|--------|--------------------|
+| Kafka               | event-sourcing, CQRS, Statistic  | 200,000 RPS                 | 16  | 64 GB  | 10                |
+| Redis               | auth                      | 150,000 RPS                 | 8   | 32 GB  | 10                |
+| MongoDB             | article, video, file (outbox), contentControl, favorite, recommend                   | 60,000 RPS           | 16  | 64 GB  | 12                |
+| Elasticsearch       | search                   | 250 RPS                       | 8   | 64 GB  | 5                 |
+| Prometheus          | метрики                   | 300 RPS                       | 4   | 16 GB  | 4                 |
+| ClickHouse          | comment, recommend, search, favorite                  | 25,000 RPS           | 16  | 64 GB  | 8                 |
+| Vault               | auth                      | 10,000 RPS                    | 4   | 16 GB  | 4                 |
+| PostgreSQL          | profile, channel, contentControl                   | 20,000 RPS            | 8   | 32 GB  | 8                 |
+
 
 ---
 
