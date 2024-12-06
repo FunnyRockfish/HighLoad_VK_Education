@@ -953,6 +953,7 @@ _Как работает_
 ---  
 ДЗ №10
 
+![Схема_проекта_fix_fix](https://github.com/user-attachments/assets/b4a06d4f-8ffd-431d-8f05-e6b763bef121)
 
 ---  
 ДЗ №11  
